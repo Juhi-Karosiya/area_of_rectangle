@@ -34,7 +34,7 @@
 
         .input{
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
             width: 100%;
             margin-top: 5vh;
            
@@ -50,6 +50,7 @@
             font-size: 20px;
             padding-left: 10px;
             cursor: pointer;
+           
         }
 
         .btn{
@@ -70,6 +71,7 @@
 
         .input{
             display: flex;
+            justify-content: space-evenly;
             width: 80%;
             margin-top: 5vh;
             flex-direction: column;
@@ -87,8 +89,6 @@
           } 
         }
 
-           
-
     </style>
 </head>  
 <body>
@@ -97,14 +97,30 @@
         <div class="rectangle"> </div>
         <div class="input">
             <div class="length">
-                <input type="number"class="l" placeholder="Enter length">
+                <input type="text"class="l" placeholder="Enter length" id="num1">
             </div>
             <div class="breadth">
-                <input type="number"class="l" placeholder="Enter breadth">
+                <input type="text"class="l" placeholder="Enter breadth" id="num2">
             </div>
+           
         </div>
-        <button class="btn"> Calculate</button>
+       
+        <p id="result">-</p>
+        <button class="btn" onclick= "area()"> Calculate</button>
        
     </div>
+
+    <script>
+        function area() {
+            const firstElement = document.getElementById("num1");
+            const secondElement = document.getElementById("num2");
+            const finalElement = document.getElementById("result");
+
+            const total = parseInt(firstElement.value) * parseInt( secondElement.value);
+
+           finalElement.innerText = `area: ${total}`;
+
+        }
+    </script>
 </body>
 </html>
